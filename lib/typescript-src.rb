@@ -13,6 +13,10 @@ module TypeScript
         root + "/lib/support/typescript.js"
       end
 
+      def js_services_path
+        root + "/lib/support/typescriptServices.js"
+      end
+
       def js_content
         File.read(js_path)
       end
