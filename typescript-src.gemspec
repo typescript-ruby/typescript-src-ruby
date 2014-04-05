@@ -8,5 +8,5 @@ Gem::Specification.new do |gem|
 
   gem.files         = `git ls-files`.split($\)
   gem.name          = "typescript-src"
-  gem.version       = "0.9.0.1"
+  gem.version       = "1.0.0.0"
 end
