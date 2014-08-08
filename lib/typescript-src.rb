@@ -15,7 +15,7 @@ module TypeScript
       end
 
       # @return [Pathname]
-      def typescript_js_path
+      def js_path
         typescript_path.join('bin/typescript.js')
       end
 
@@ -33,7 +33,7 @@ module TypeScript
 
       # @return [String]
       def js_content
-        typescript_js_path.read
+        js_path.read
       end
 
       # @return [Hash]
