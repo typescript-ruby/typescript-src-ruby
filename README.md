@@ -1,10 +1,10 @@
 # Typescript::Src
 
-TODO: Write a gem description
+TypeScript source files in a gem.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
     gem 'typescript-src'
 
@@ -18,7 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'typescript-src'
+
+p TypeScript::Src.tsc_path # => #<Pathname:/path/to/tsc>
+p TypeScript::Src.js_path  # => #<Pathname:/path/to/typescript.js>
+p TypeScript::Src.version  # => "1.0.1"
+```
 
 ## Contributing
 
