@@ -17,4 +17,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_path  = ['lib']
   spec.version       = TypeScript::Src::VERSION + ".1"
+
+  spec.add_development_dependency 'rake'
 end
