@@ -1,4 +1,5 @@
 require 'test/unit'
+require 'typescript-src'
 
 class TestTypeScriptSrc < Test::Unit::TestCase
   def test_gem_version

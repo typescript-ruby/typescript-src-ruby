@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'typescript-src' # for VERSION
+require 'typescript-src/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "typescript-src"

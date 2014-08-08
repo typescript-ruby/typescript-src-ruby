@@ -1,11 +1,10 @@
 require 'json'
 require 'pathname'
+require 'typescript-src/version'
 
 module TypeScript
   module Src
     class << self
-      VERSION = package_info['version'] + '.2'
-
       # @return [Pathname]
       def typescript_path
         @typescript_path ||= ::Pathname.new(File.dirname(__FILE__)).join('typescript-src/support/typescript')
