@@ -4,6 +4,8 @@ require 'pathname'
 module TypeScript
   module Src
     class << self
+      VERSION = package_info['version'] + '.2'
+
       # @return [Pathname]
       def typescript_path
         @typescript_path ||= ::Pathname.new(File.dirname(__FILE__)).join('typescript-src/support/typescript')
@@ -41,11 +43,9 @@ module TypeScript
         JSON.parse(package_json_path.read)
       end
 
-      # to lazy loading
-      # @param name [Symbol]
-      # @return [Object]
-      def const_missing(name)
-        package_info[name.downcase.to_s]
+      # @return [String]
+      def version
+        package_info['version']
       end
     end
   end

@@ -1,8 +1,12 @@
 require 'test/unit'
 
 class TestTypeScriptSrc < Test::Unit::TestCase
-  def test_version
+  def test_gem_version
     assert { TypeScript::Src::VERSION.kind_of?(String) }
+  end
+
+  def test_version
+    assert { TypeScript::Src.version.kind_of?(String) }
   end
 
   def test_package_json_path
