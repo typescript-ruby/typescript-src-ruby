@@ -1,4 +1,8 @@
 # -*- encoding: utf-8 -*-
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'typescript-src'
+
 Gem::Specification.new do |gem|
   gem.authors       = ["KAWACHI Takashi"]
   gem.email         = ["tkawachi@gmail.com"]
@@ -8,5 +12,5 @@ Gem::Specification.new do |gem|
 
   gem.files         = `git ls-files`.split($\)
   gem.name          = "typescript-src"
-  gem.version       = "1.0.0.0"
+  gem.version       = TypeScript::Src::VERSION + ".1"
 end
