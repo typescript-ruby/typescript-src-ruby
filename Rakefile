@@ -4,12 +4,15 @@ require 'rake/testtask'
 
 desc 'download the latest TypeScript source files'
 task 'typescript:download' do
-  sh 'npm', 'install', '-g', 'typescript'
+  sh 'npm', 'install', 'typescript'
 end
 
 desc 'upgrade TypeScript source files'
 task 'typescript:upgrade' => %i(typescript:download) do
-  mv 'node_modules/typescript', 'lib/support'
+  dir = 'lib/typescript-src/support'
+  rm_rf dir
+  mkdir_p dir
+  mv 'node_modules/typescript', "#{dir}/typescript"
 end
 
 Rake::TestTask.new do |test|
