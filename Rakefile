@@ -8,7 +8,7 @@ task 'typescript:download' do
 end
 
 desc 'upgrade TypeScript source files'
-task 'typescript:upgrade' => %i(typescript:download) do
+task 'typescript:upgrade' => %w(typescript:download) do
   dir = 'lib/typescript-src/support'
   rm_rf dir
   mkdir_p dir

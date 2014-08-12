@@ -1,4 +1,4 @@
-# Typescript::Src
+# typescript-src [![Build Status](https://travis-ci.org/typescript-ruby/typescript-src-ruby.svg?branch=master)](https://travis-ci.org/typescript-ruby/typescript-src-ruby)
 
 TypeScript source files in a gem.
 
