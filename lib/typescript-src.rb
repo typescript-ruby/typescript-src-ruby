@@ -7,7 +7,15 @@ module TypeScript
     class << self
       # @return [Pathname]
       def typescript_path
-        @typescript_path ||= ::Pathname.new(File.dirname(__FILE__)).join('typescript-src/support/typescript')
+        unless @typescript_path
+          begin
+            @typescript_path = ::Pathname.new(`npm root -g`.strip! + '/typescript')
+          rescue
+            @typescript_path = ::Pathname.new(File.dirname(__FILE__)).join('typescript-src/support/typescript')
+          end
+        end
+
+        @typescript_path
       end
 
       # @return [Pathname]
