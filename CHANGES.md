@@ -1,3 +1,6 @@
+## v1.4.1.3 2015-06-29 21:37:00+0300
+* Updated Typescript to v1.4.1
+* Added option `use_external_tsc` (boolean). It could be helpful if you have locally installed Typescript node.js module and want to use it.
 
 ## v1.0.1.2 2014-08-09 08:37:08+0900
 

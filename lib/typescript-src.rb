@@ -5,12 +5,14 @@ require 'typescript-src/version'
 module TypeScript
   module Src
     class << self
+      attr_accessor :use_external_tsc
+
       # @return [Pathname]
       def typescript_path
         unless @typescript_path
-          begin
+          if self.use_external_tsc
             @typescript_path = ::Pathname.new(`npm root -g`.strip! + '/typescript')
-          rescue
+          else
             @typescript_path = ::Pathname.new(File.dirname(__FILE__)).join('typescript-src/support/typescript')
           end
         end
@@ -55,6 +57,8 @@ module TypeScript
         package_info['version']
       end
     end
+
+    self.use_external_tsc = false
   end
 end
 

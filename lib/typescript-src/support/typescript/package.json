@@ -4,11 +4,11 @@
     "name": "Microsoft Corp."
   },
   "homepage": "http://typescriptlang.org/",
-  "version": "1.0.1",
+  "version": "1.4.1",
   "licenses": [
     {
       "type": "Apache License 2.0",
-      "url": "http://typescript.codeplex.com/license"
+      "url": "https://github.com/Microsoft/TypeScript/blob/master/LICENSE.txt"
     }
   ],
   "description": "TypeScript is a language for application scale JavaScript development",
@@ -20,14 +20,14 @@
     "javascript"
   ],
   "bugs": {
-    "url": "http://typescript.codeplex.com/workitem/list/basic"
+    "url": "https://github.com/Microsoft/TypeScript/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://git01.codeplex.com/typescript"
+    "url": "https://github.com/Microsoft/TypeScript.git"
   },
   "preferGlobal": true,
-  "main": "./bin/typescript.js",
+  "main": "./bin/typescriptServices.js",
   "bin": {
     "tsc": "./bin/tsc"
   },
@@ -35,15 +35,21 @@
     "node": ">=0.8.0"
   },
   "devDependencies": {
-    "jake": "latest"
+    "jake": "latest",
+    "mocha": "latest",
+    "chai": "latest",
+    "browserify": "latest",
+    "istanbul": "latest",
+    "codeclimate-test-reporter": "latest"
   },
-  "_id": "typescript@1.0.1",
-  "dist": {
-    "shasum": "e8eacde3084a091d3fe29b60ac5862252662a25a",
-    "tarball": "http://registry.npmjs.org/typescript/-/typescript-1.0.1.tgz"
+  "scripts": {
+    "test": "jake generate-code-coverage"
   },
-  "_from": "typescript@*",
-  "_npmVersion": "1.4.3",
+  "gitHead": "3ab3f916c00755a1d9937f7116d1e9a80ddf2ef3",
+  "_id": "typescript@1.4.1",
+  "_shasum": "eb4da986d1b7f01452eafb57559e0cc8f516cd48",
+  "_from": "typescript@1.4.1",
+  "_npmVersion": "1.4.28",
   "_npmUser": {
     "name": "typescript",
     "email": "typescript@microsoft.com"
@@ -54,8 +60,10 @@
       "email": "typescript@microsoft.com"
     }
   ],
+  "dist": {
+    "shasum": "eb4da986d1b7f01452eafb57559e0cc8f516cd48",
+    "tarball": "http://registry.npmjs.org/typescript/-/typescript-1.4.1.tgz"
+  },
   "directories": {},
-  "_shasum": "e8eacde3084a091d3fe29b60ac5862252662a25a",
-  "_resolved": "https://registry.npmjs.org/typescript/-/typescript-1.0.1.tgz",
-  "readme": "ERROR: No README data found!"
+  "_resolved": "https://registry.npmjs.org/typescript/-/typescript-1.4.1.tgz"
 }
