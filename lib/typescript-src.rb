@@ -27,7 +27,12 @@ module TypeScript
 
       # @return [Pathname]
       def js_path
-        typescript_path.join('bin/tsc.js')
+        bin_tsc = typescript_path.join('bin/tsc.js')
+        if ::File.exist?(bin_tsc)
+          bin_tsc
+        else
+          typescript_path.join('lib/tsc.js')
+        end
       end
 
       # @return [Pathname]
