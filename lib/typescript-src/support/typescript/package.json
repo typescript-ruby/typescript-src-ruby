@@ -4,7 +4,7 @@
     "name": "Microsoft Corp."
   },
   "homepage": "http://typescriptlang.org/",
-  "version": "1.4.1",
+  "version": "1.5.3",
   "licenses": [
     {
       "type": "Apache License 2.0",
@@ -24,12 +24,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/TypeScript.git"
+    "url": "git+https://github.com/Microsoft/TypeScript.git"
   },
   "preferGlobal": true,
-  "main": "./bin/typescriptServices.js",
+  "main": "./bin/typescript.js",
   "bin": {
-    "tsc": "./bin/tsc"
+    "tsc": "./bin/tsc",
+    "tsserver": "./bin/tsserver"
   },
   "engines": {
     "node": ">=0.8.0"
@@ -39,20 +40,24 @@
     "mocha": "latest",
     "chai": "latest",
     "browserify": "latest",
-    "istanbul": "latest",
-    "codeclimate-test-reporter": "latest"
+    "istanbul": "latest"
   },
   "scripts": {
-    "test": "jake generate-code-coverage"
+    "test": "jake runtests"
   },
-  "gitHead": "3ab3f916c00755a1d9937f7116d1e9a80ddf2ef3",
-  "_id": "typescript@1.4.1",
-  "_shasum": "eb4da986d1b7f01452eafb57559e0cc8f516cd48",
-  "_from": "typescript@1.4.1",
-  "_npmVersion": "1.4.28",
+  "gitHead": "a24aa6f57d281bafd3535f0f4c3f492364a8b4d6",
+  "_id": "typescript@1.5.3",
+  "_shasum": "ce35e55f75b7a8d0ed571b503bd0a57157e523f7",
+  "_from": "typescript@1.5.3",
+  "_npmVersion": "2.11.3",
+  "_nodeVersion": "0.12.7",
   "_npmUser": {
     "name": "typescript",
     "email": "typescript@microsoft.com"
+  },
+  "dist": {
+    "shasum": "ce35e55f75b7a8d0ed571b503bd0a57157e523f7",
+    "tarball": "http://registry.npmjs.org/typescript/-/typescript-1.5.3.tgz"
   },
   "maintainers": [
     {
@@ -60,10 +65,6 @@
       "email": "typescript@microsoft.com"
     }
   ],
-  "dist": {
-    "shasum": "eb4da986d1b7f01452eafb57559e0cc8f516cd48",
-    "tarball": "http://registry.npmjs.org/typescript/-/typescript-1.4.1.tgz"
-  },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/typescript/-/typescript-1.4.1.tgz"
+  "_resolved": "https://registry.npmjs.org/typescript/-/typescript-1.5.3.tgz"
 }
