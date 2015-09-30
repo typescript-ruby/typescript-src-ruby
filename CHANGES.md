@@ -1,3 +1,6 @@
+## v1.5.3.1 2015-09-30 11:34:00+0300
+* Updated Typescript to v1.6.2
+
 ## v1.5.3.1 2015-09-02 11:28:00+0300
 * Updated Typescript to v1.5.3
 * Added support of different tsc.js path for 1.6 prerelease Typescript
