@@ -57,7 +57,7 @@ declare module Intl {
         currency?: string;
         currencyDisplay?: string;
         useGrouping?: boolean;
-        minimumintegerDigits?: number;
+        minimumIntegerDigits?: number;
         minimumFractionDigits?: number;
         maximumFractionDigits?: number;
         minimumSignificantDigits?: number;
@@ -70,7 +70,7 @@ declare module Intl {
         style: string;
         currency?: string;
         currencyDisplay?: string;
-        minimumintegerDigits: number;
+        minimumIntegerDigits: number;
         minimumFractionDigits: number;
         maximumFractionDigits: number;
         minimumSignificantDigits?: number;
@@ -234,7 +234,7 @@ interface AudioBuffer {
     length: number;
     numberOfChannels: number;
     sampleRate: number;
-    getChannelData(channel: number): any;
+    getChannelData(channel: number): Float32Array;
 }
 
 declare var AudioBuffer: {
@@ -286,7 +286,7 @@ interface Console {
     select(element: any): void;
     time(timerName?: string): void;
     timeEnd(timerName?: string): void;
-    trace(): void;
+    trace(message?: any, ...optionalParams: any[]): void;
     warn(message?: any, ...optionalParams: any[]): void;
 }
 
@@ -526,9 +526,9 @@ interface IDBDatabase extends EventTarget {
     objectStoreNames: DOMStringList;
     onabort: (ev: Event) => any;
     onerror: (ev: Event) => any;
-    version: string;
+    version: number;
     close(): void;
-    createObjectStore(name: string, optionalParameters?: any): IDBObjectStore;
+    createObjectStore(name: string, optionalParameters?: IDBObjectStoreParameters): IDBObjectStore;
     deleteObjectStore(name: string): void;
     transaction(storeNames: any, mode?: string): IDBTransaction;
     addEventListener(type: "abort", listener: (ev: Event) => any, useCapture?: boolean): void;
@@ -553,10 +553,11 @@ declare var IDBFactory: {
 }
 
 interface IDBIndex {
-    keyPath: string;
+    keyPath: string | string[];
     name: string;
     objectStore: IDBObjectStore;
     unique: boolean;
+    multiEntry: boolean;
     count(key?: any): IDBRequest;
     get(key: any): IDBRequest;
     getKey(key: any): IDBRequest;
@@ -593,7 +594,7 @@ interface IDBObjectStore {
     add(value: any, key?: any): IDBRequest;
     clear(): IDBRequest;
     count(key?: any): IDBRequest;
-    createIndex(name: string, keyPath: string, optionalParameters?: any): IDBIndex;
+    createIndex(name: string, keyPath: string | string[], optionalParameters?: IDBIndexParameters): IDBIndex;
     delete(key: any): IDBRequest;
     deleteIndex(indexName: string): void;
     get(key: any): IDBRequest;
@@ -677,18 +678,16 @@ declare var IDBVersionChangeEvent: {
 }
 
 interface ImageData {
-    data: number[];
+    data: Uint8ClampedArray;
     height: number;
     width: number;
 }
 
-interface ImageDataConstructor {
+declare var ImageData: {
     prototype: ImageData;
     new(width: number, height: number): ImageData;
     new(array: Uint8ClampedArray, width: number, height: number): ImageData;
 }
-
-declare var ImageData: ImageDataConstructor; 
 
 interface MSApp {
     clearTemporaryWebDataAsync(): MSAppAsyncOperation;
@@ -1111,6 +1110,15 @@ interface WorkerUtils extends Object, WindowBase64 {
     setTimeout(handler: any, timeout?: any, ...args: any[]): number;
 }
 
+interface IDBObjectStoreParameters {
+    keyPath?: string | string[];
+    autoIncrement?: boolean;
+}
+
+interface IDBIndexParameters {
+    unique?: boolean;
+    multiEntry?: boolean;
+}
 
 interface BlobPropertyBag {
     type?: string;
@@ -1126,8 +1134,6 @@ interface EventListenerObject {
     handleEvent(evt: Event): void;
 }
 
-declare type EventListenerOrEventListenerObject = EventListener | EventListenerObject;
-
 interface MessageEventInit extends EventInit {
     data?: any;
     origin?: string;
@@ -1142,6 +1148,8 @@ interface ProgressEventInit extends EventInit {
     loaded?: number;
     total?: number;
 }
+
+declare type EventListenerOrEventListenerObject = EventListener | EventListenerObject;
 
 interface ErrorEventHandler {
     (message: string, filename?: string, lineno?: number, colno?: number, error?:Error): void;
