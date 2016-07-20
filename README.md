@@ -23,7 +23,8 @@ require 'typescript-src'
 
 TypeScript::Src.use_external_tsc = true # if you want to use tsc from installed node.js module.
                                         # false by default (it uses built-in tsc)
-
+TypeScript::Src.use_app_path = true # with above to use locally installed module
+										
 p TypeScript::Src.tsc_path # => #<Pathname:/path/to/tsc>
 p TypeScript::Src.js_path  # => #<Pathname:/path/to/typescript.js>
 p TypeScript::Src.version  # => "1.4.1.3"
