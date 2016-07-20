@@ -6,12 +6,14 @@ module TypeScript
   module Src
     class << self
       attr_accessor :use_external_tsc
+      attr_accessor :use_app_path
 
       # @return [Pathname]
       def typescript_path
         unless @typescript_path
           if self.use_external_tsc
-            @typescript_path = ::Pathname.new(`npm root -g`.strip! + '/typescript')
+            opt = self.use_app_path ? '' : ' -g'
+            @typescript_path = ::Pathname.new(`npm root#{opt}`.strip! + '/typescript')
           else
             @typescript_path = ::Pathname.new(File.dirname(__FILE__)).join('typescript-src/support/typescript')
           end
@@ -64,6 +66,7 @@ module TypeScript
     end
 
     self.use_external_tsc = false
+    self.use_app_path = false
   end
 end
 
